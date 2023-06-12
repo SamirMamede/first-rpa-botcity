@@ -38,6 +38,7 @@ class Bot(DesktopBot):
 
         # Opens the BotCity website.
         # self.browse("http://www.botcity.dev")
+        
         self.execute(r'C:\Users\Anuar\Desktop\apps\Telegram.lnk')
 
         if not self.find( "buscar contato", matching=0.97, waiting_time=10000):
@@ -54,8 +55,22 @@ class Bot(DesktopBot):
         self.click()
         self.paste('testando automação com botcity =)')
         self.enter()
+        self.alt_f4()
         
-
+        if not self.find( "option", matching=0.97, waiting_time=10000):
+            self.not_found("option")
+        self.click()
+        
+        if not self.find( "click telegram", matching=0.97, waiting_time=10000):
+            self.not_found("click telegram")
+        self.right_click()
+        
+        if not self.find( "quit telegram", matching=0.97, waiting_time=10000):
+            self.not_found("quit telegram")
+        self.click()
+        
+        
+        
         # Uncomment to mark this task as finished on BotMaestro
         # self.maestro.finish_task(
         #     task_id=execution.task_id,
